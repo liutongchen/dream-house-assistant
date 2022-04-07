@@ -87,18 +87,16 @@
 
 Another API that returns similar data is [CrimeData](http`://rapidapi.com/jgentes/api/crime-data/).
 
-    Example Request:
+Example Request:
+```bash
+    curl --request GET \`
+        --url 'https://jgentes-crime-data-v1.p.rapidapi.com/crime?startdate=9%2F19%2F2015&enddate=9%2F25%2F2015&long=-122.5076392&lat=37.757815' \
+        --header 'X-RapidAPI-Host: jgentes-Crime-Data-v1.p.rapidapi.com' \
+        --header 'X-RapidAPI-Key: SIGN-UP-FOR-KEY'
+```
 
-    ```bash
-        curl --request GET \`
-            --url 'https://jgentes-crime-data-v1.p.rapidapi.com/crime?startdate=9%2F19%2F2015&enddate=9%2F25%2F2015&long=-122.5076392&lat=37.757815' \
-            --header 'X-RapidAPI-Host: jgentes-Crime-Data-v1.p.rapidapi.com' \
-            --header 'X-RapidAPI-Key: SIGN-UP-FOR-KEY'
-    ```
-
-    Example Response:
-
-    ```json
+Example Response:
+```json
     [
         {
         "description":"HARASSING COMMUNICATIONS",
@@ -111,7 +109,7 @@ Another API that returns similar data is [CrimeData](http`://rapidapi.com/jgente
             "location":[42.33607605681727, -83.05793091956167]
         }
     ]
-    ```
+```
 
 ### Noise
 ### Demographic
