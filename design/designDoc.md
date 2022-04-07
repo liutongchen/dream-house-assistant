@@ -87,7 +87,8 @@
 
 Another API that returns similar data is [CrimeData](http`://rapidapi.com/jgentes/api/crime-data/).
 
-    Example Request
+    Example Request:
+
     ```bash
         curl --request GET \`
             --url 'https://jgentes-crime-data-v1.p.rapidapi.com/crime?startdate=9%2F19%2F2015&enddate=9%2F25%2F2015&long=-122.5076392&lat=37.757815' \
@@ -95,7 +96,8 @@ Another API that returns similar data is [CrimeData](http`://rapidapi.com/jgente
             --header 'X-RapidAPI-Key: SIGN-UP-FOR-KEY'
     ```
 
-    Example Response
+    Example Response:
+
     ```json
     [
         {
