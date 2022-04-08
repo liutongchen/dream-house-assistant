@@ -112,7 +112,43 @@ Example Response:
 ```
 
 ### Noise
+Given the latitude and longitude of a location, return the sound score. [(Ref)](https://howloud.com/developers/)
+
+Example Request
+```bash
+    curl --request GET \`
+        --url 'http://elb1.howloud.com/score?key=yourkey&longitude=-118&latitude=34' 
+```
+
+Example Response
+
+```json
+{
+   "status":"OK",
+   "request":{
+      "latitude":“34.05615”,
+      "key":"yourkey",
+      "longitude":“-118.23596”
+   },
+   "result":[
+      {
+         "airports":0,
+         "traffictext":"Busy",
+         "localtext":"Active",
+         "airportstext":"Calm",
+         "score":68,
+         "traffic":29,
+         "scoretext":"Active",
+         "local":2
+      }
+   ]
+}
+```
+
 ### Demographic
+1. ServiceObjects API - given address, return age, income, race, gender information. [(ref)](https://www.serviceobjects.com/products-internal/demographics/demographics-data-plus/#) Pricing unknown.
+2. Geocodio - given address, return census data include age, income, race, etc. 2,500 free lookups every day. [(ref)](https://www.geocod.io/docs/#demographics-census)
+   
 ### Distance to Powerline
 ### Average Income
 ### House Creep
