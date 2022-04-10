@@ -150,6 +150,121 @@ Example Response
 2. Geocodio - given address, return census data include age, income, race, etc. 2,500 free lookups every day. [(ref)](https://www.geocod.io/docs/#demographics-census)
    
 ### Distance to Powerline
-### Average Income
+1. [Google Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/overview) - calculate distance between origin and destination. The complexity of using this API is first fetching the exact location of nearby powerlines.
+2. [EarthDefine API](https://buildings.earthdefine.com/) - Given the coordinate of an address, return the distance to the closest electrical powerline in meters, voltage of the closest powerline. Not sure about the pricing.
+
+Example Request
+```bash
+GET https://api.buildings.earthdefine.com/v1/buildings?latitude=39.72&longitude=-105.1&token=80e4118a-045a-40db-8510-bf346064b0c9
+```
+
+Example Response
+```
+{
+  "page": 0,
+  "size": 10,
+  "totalElements": 1749,
+  "content": [
+    {
+      "systemScore": null,
+      "score": null,
+      "distance": 6.792244846145733,
+      "distanceUnit": "METERS",
+      "address": "200 Garrison St, Lakewood, CO 80226",
+      "area": 2470,
+      "city": "Lakewood",
+      "county": "Jefferson County",
+      "latitude": 39.719992255163696,
+      "longitude": -105.09992122595098,
+      "plusCode": "85FPPW92+X2W",
+      "source": "Aerial Imagery",
+      "sourceDate": "2017/09/02 00:00:00+00",
+      "state": "CO",
+      "zip": "80226",
+      "geometry": "MULTIPOLYGON (((-105.099845433 39.7200249690001,-105.09984533 39.7199044980001,-105.099986585 39.7199044290001,-105.099986746 39.7200918280001,-105.099880805 39.72009188,-105.099880747 39.7200249520001,-105.099845433 39.7200249690001)))",
+      "lineDistance": 1223.684187852931,
+      "lineVoltage": 230,
+      "lineVoltageClass": "220-287",
+      "lineType": "AC",
+      "lineStatus": "NOT AVAILABLE",
+      "lineOwner": "NOT AVAILABLE"
+    }
+  ]
+}
+```
+
 ### House Creep
+Not found
+
 ### Rent Price
+1. [Zillow API](https://rapidapi.com/apimaker/api/zillow-com1/) - given the address, return the estimated rental price of a property
+
+Example Request
+```bash
+curl --request GET \
+	--url 'https://zillow-com1.p.rapidapi.com/rentEstimate?propertyType=%3CREQUIRED%3E&address=1093%20County%20Route%2060%2C%20Newton%20Falls' \
+	--header 'X-RapidAPI-Host: zillow-com1.p.rapidapi.com' \
+	--header 'X-RapidAPI-Key: 8250e38278msh93c58f0574456f1p168440jsn5404cf0da539'
+```
+
+Example Response
+```json
+{
+  "comparableRentals":28,
+  "percentile_25":1447.25,
+  "highRent":1950,
+  "lowRent":1214,
+  "lat":44.200672,
+  "median":1560.5,
+  "rent":1699,
+  "percentile_75":1599,
+  "long":-74.990356,
+}
+```
+
+2. [Rent Estimate API](https://rapidapi.com/moneals/api/rent-estimate) - given information of a property (e.g. address, # of rooms), return the estimated rental price.
+
+Example Request
+```bash
+curl --request GET \
+	--url 'https://realtymole-rental-estimate-v1.p.rapidapi.com/rentalPrice?propertyType=Single%20Family&address=5500%20Grand%20Lake%20Drive%2C%20San%20Antonio%2C%20TX&bathrooms=2&compCount=5&squareFootage=1600&bedrooms=4' \
+	--header 'X-RapidAPI-Host: realtymole-rental-estimate-v1.p.rapidapi.com' \
+	--header 'X-RapidAPI-Key: 8250e38278msh93c58f0574456f1p168440jsn5404cf0da5
+```
+
+Example Response
+```json
+{
+  "rent":1434
+  "rentRangeLow":1379.81
+  "rentRangeHigh":1488.19
+  "latitude":29.4759532
+  "longitude":-98.35147909999999
+  "listings":[{
+      "address":"5114 Pond Lk"
+      "bathrooms":"2"
+      "bedrooms":4
+      "city":"San Antonio"
+      "county":"Bexar"
+      "formattedAddress":"5114 Pond Lk, San Antonio, Texas 78244"
+      "latitude":29.471978
+      "longitude":-98.3509
+      "photo":"https://ap.rdcpix.com/2062405879/642bca386732d79c6fff329322df786al-m0xd-w480_h480_q80.jpg"
+      "price":1350
+      "propertyType":"Single Family"
+      "publishedDate":"2019-06-09T23:02:44.288Z"
+      "squareFootage":1747
+      "state":"TX"
+      "zipcode":"78244"
+      "distance":0.45
+      "daysOld":26.74
+      "correlation":0.9793
+    }]
+}
+```
+
+### Good APIs to investigate for phase two
+* [Mashvisor API](https://rapidapi.com/mashvisor-team/api/mashvisor/) - given property, return investment analysis
+
+## References
+* [Real Estate APIs](https://rapidapi.com/blog/best-real-estate-apis/)
