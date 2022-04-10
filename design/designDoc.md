@@ -1,14 +1,18 @@
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Mock Up](#mock-up)
+- [Progress Report](#progress-report)
 - [Data Points to Collect](#data-points-to-collect)
   - [Crime-related data points](#crime-related-data-points)
   - [Noise](#noise)
   - [Demographic](#demographic)
   - [Distance to Powerline](#distance-to-powerline)
-  - [Average Income](#average-income)
-  - [House Creep](#house-creep)
+  - ~~[House Creep](#house-creep)~~
   - [Rent Price](#rent-price)
+  - [Good APIs to investigate for phase two](#good-apis-to-investigate-for-phase-two)
+  - [APIs that have been tested/considered but dropped]
+- [References](#references)
+
 
 ## Mock Up
 ![mockup](mockup.png)
@@ -114,6 +118,9 @@ Example Response
 ```
 
 ### Demographic
+
+Demographic information includes age, average income and race.
+
 1. [ServiceObjects API](https://www.serviceobjects.com/products-internal/demographics/demographics-data-plus/#) - given address, return age, income, race, gender information. **Tested successfully. Response in XML. Waiting for pricing information.**
 2. [Geocodio](https://www.geocod.io/docs/#demographics-census) - given address, return census data include age, income, race, etc. 2,500 free lookups every day. **Tested successfully. Response in Json and pricing is very reasonable (2,500 free lookups every day). This is the preferred API**
    
