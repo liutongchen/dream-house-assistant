@@ -15,22 +15,8 @@
 
 ## Data Points to Collect
 ### Crime-related data points
-  
-1. Given the latitude and longitude, return the crime score. [(Ref)](https://rapidapi.com/yourmapper/api/crimescore/) 
-
-    Example Request:
-    ```bash
-    curl --request GET \
-        --url 'https://crimescore.p.rapidapi.com/crimescore?lat=38.08809&lon=-85.679626&f=json&id=174' \
-        --header 'X-RapidAPI-Host: crimescore.p.rapidapi.com' \
-        --header 'X-RapidAPI-Key: 8250e38278msh93c58f0574456f1p168440jsn5404cf0da539'
-    ```
-    Example 200 Response:
-    ```
-    Not found
-    ```
-   
-2. Given the latitude, longitude and distance, return the incidence details. [(Ref)](https://rapidapi.com/crimeometer/api/crimeometer/)
+     
+1. [Crimometer API](https://rapidapi.com/crimeometer/api/crimeometer/) - Given the latitude, longitude and distance, return the incidence details. Pricing: 7 day free trail and then 40$ per month for 100 requests. Considering the price, I'll mock the response first and test later using the real API and throttle its usage.
 
     Example Request:
     ```bash
@@ -43,8 +29,7 @@
 
     Example 200 Response:
     ```json
-    [
-    {
+    [{
         "total_incidents": 2,
         "total_pages": 1,
         "incidents": [
@@ -81,38 +66,12 @@
             "incident_address": "5809 SWEENEY CIR"
         }
         ]
-    }
-    ]
+    }]
     ```
-
-Another API that returns similar data is [CrimeData](http`://rapidapi.com/jgentes/api/crime-data/).
-
-Example Request:
-```bash
-    curl --request GET \`
-        --url 'https://jgentes-crime-data-v1.p.rapidapi.com/crime?startdate=9%2F19%2F2015&enddate=9%2F25%2F2015&long=-122.5076392&lat=37.757815' \
-        --header 'X-RapidAPI-Host: jgentes-Crime-Data-v1.p.rapidapi.com' \
-        --header 'X-RapidAPI-Key: SIGN-UP-FOR-KEY'
-```
-
-Example Response:
-```json
-    [
-        {
-        "description":"HARASSING COMMUNICATIONS",
-        "datetime":"6/24/2014 11:15 PM",
-        "location":[42.343060293817736, -83.02064787655652]
-        },
-        {
-            "description":"LARCENY - PERSONAL PROPERTY FROM VEHICLE",
-            "datetime":"6/24/2014 08:15 PM",
-            "location":[42.33607605681727, -83.05793091956167]
-        }
-    ]
-```
+2. [SpotCrime API](https://github.com/yocontra/spotcrime) **TODO: try this out first before using crimeometer since it's cheaper**
 
 ### Noise
-Given the latitude and longitude of a location, return the sound score. [(Ref)](https://howloud.com/developers/)
+Given the latitude and longitude of a location, return the sound score. [(Ref)](https://howloud.com/developers/) **TODO: waiting for trial key to test the API**
 
 Example Request
 ```bash
@@ -146,12 +105,12 @@ Example Response
 ```
 
 ### Demographic
-1. ServiceObjects API - given address, return age, income, race, gender information. [(ref)](https://www.serviceobjects.com/products-internal/demographics/demographics-data-plus/#) Pricing unknown.
-2. Geocodio - given address, return census data include age, income, race, etc. 2,500 free lookups every day. [(ref)](https://www.geocod.io/docs/#demographics-census)
+1. [ServiceObjects API](https://www.serviceobjects.com/products-internal/demographics/demographics-data-plus/#) - given address, return age, income, race, gender information. **Tested successfully. Response in XML. Waiting for pricing information.**
+2. [Geocodio](https://www.geocod.io/docs/#demographics-census) - given address, return census data include age, income, race, etc. 2,500 free lookups every day. **Tested successfully. Response in Json and pricing is very reasonable (2,500 free lookups every day). This is the preferred API**
    
 ### Distance to Powerline
-1. [Google Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/overview) - calculate distance between origin and destination. The complexity of using this API is first fetching the exact location of nearby powerlines.
-2. [EarthDefine API](https://buildings.earthdefine.com/) - Given the coordinate of an address, return the distance to the closest electrical powerline in meters, voltage of the closest powerline. Not sure about the pricing.
+
+[EarthDefine API](https://buildings.earthdefine.com/) - Given the coordinate of an address, return the distance to the closest electrical powerline in meters, voltage of the closest powerline. Not sure about the pricing. **Tested successfully via web portal. Waiting for trail API key to test on Postman. Waiting on pricing options.**
 
 Example Request
 ```bash
@@ -193,11 +152,11 @@ Example Response
 }
 ```
 
-### House Creep
+### --House Creep--
 Not found
 
 ### Rent Price
-1. [Zillow API](https://rapidapi.com/apimaker/api/zillow-com1/) - given the address, return the estimated rental price of a property
+1. [Zillow API](https://rapidapi.com/apimaker/api/zillow-com1/) - given the address, return the estimated rental price of a property. **Tested successfully. 20/month.**
 
 Example Request
 ```bash
@@ -222,7 +181,7 @@ Example Response
 }
 ```
 
-2. [Rent Estimate API](https://rapidapi.com/moneals/api/rent-estimate) - given information of a property (e.g. address, # of rooms), return the estimated rental price.
+2. [Rent Estimate API](https://rapidapi.com/moneals/api/rent-estimate) - given information of a property (e.g. address, # of rooms), return the estimated rental price. **Tested successfully. 50/month for free. This is the preferred API because it's cheaper and has comparable listings.**
 
 Example Request
 ```bash
@@ -265,6 +224,11 @@ Example Response
 
 ### Good APIs to investigate for phase two
 * [Mashvisor API](https://rapidapi.com/mashvisor-team/api/mashvisor/) - given property, return investment analysis
+
+### APIs that have been tested/considered but dropped
+* [CrimeScore API](https://rapidapi.com/yourmapper/api/crimescore/) - doesn't work
+* [CrimeData](http://rapidapi.com/jgentes/api/crime-data/) - doesn't work
+* [Google Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/overview) - calculate distance between origin and destination. But it's complicated to use this API to get nearby powerline information since I'd first need to fetch the exact location of a nearby powerline.
 
 ## References
 * [Real Estate APIs](https://rapidapi.com/blog/best-real-estate-apis/)
