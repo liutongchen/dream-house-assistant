@@ -9,8 +9,9 @@
   - [Distance to Powerline](#distance-to-powerline)
   - ~~[House Creep](#house-creep)~~
   - [Rent Price](#rent-price)
+-[Appendix](#appendix)
   - [Good APIs to investigate for phase two](#good-apis-to-investigate-for-phase-two)
-  - [APIs that have been tested/considered but dropped]
+  - APIs that have been tested/considered but dropped
 - [References](#references)
 
 
@@ -237,6 +238,8 @@ Example Response
     }]
 }
 ```
+
+## Appendix
 
 ### Good APIs to investigate for phase two
 * [Mashvisor API](https://rapidapi.com/mashvisor-team/api/mashvisor/) - given property, return investment analysis
