@@ -13,6 +13,15 @@
 ## Mock Up
 ![mockup](mockup.png)
 
+## Progress Report
+| Data Type          | API           | Status                                                                            | Pricing           | Note                                                      |
+|--------------------|---------------|-----------------------------------------------------------------------------------|-------------------|-----------------------------------------------------------|
+| Crime              | SpotCrime     | Pending code implementation to test                                               | Free              | Can only be tested via code. Plan B is using Crimeometer. |
+| Noise              | Howloud       | Pending trial key                                                                 | Free 2,500/month  |                                                           |
+| Demographic        | Geocodio      | Tested successfully                                                               | Free 2,500/month  |                                                           |
+| Powerline Distance | Earthdefine   | Tested successfully via web portal. Waiting for trail API key to test on Postman. | Pending info      |                                                           |
+| Rent Price         | Rent Estimate | Tested successfully                                                               | 50/month for free |                                                           |
+
 ## Data Points to Collect
 ### Crime-related data points
      
@@ -152,8 +161,8 @@ Example Response
 }
 ```
 
-### --House Creep--
-Not found
+### ~~House Creep
+Not found~~
 
 ### Rent Price
 1. [Zillow API](https://rapidapi.com/apimaker/api/zillow-com1/) - given the address, return the estimated rental price of a property. **Tested successfully. 20/month.**
