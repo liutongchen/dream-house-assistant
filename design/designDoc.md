@@ -9,9 +9,9 @@
   - [Distance to Powerline](#distance-to-powerline)
   - ~~[House Creep](#house-creep)~~
   - [Rent Price](#rent-price)
--[Appendix](#appendix)
+- [Appendix](#appendix)
   - [Good APIs to investigate for phase two](#good-apis-to-investigate-for-phase-two)
-  - APIs that have been tested/considered but dropped
+  - [APIs that have been tested/considered but dropped](#user-content-apis-that-have-been-testedconsidered-but-dropped)
 - [References](#references)
 
 
@@ -169,8 +169,8 @@ Example Response
 }
 ```
 
-### ~~House Creep
-Not found~~
+### ~~House Creep~~
+Not found
 
 ### Rent Price
 1. [Zillow API](https://rapidapi.com/apimaker/api/zillow-com1/) - given the address, return the estimated rental price of a property. **Tested successfully. 20/month.**
