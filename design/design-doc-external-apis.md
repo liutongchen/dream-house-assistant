@@ -7,11 +7,11 @@
   - [Noise](#noise)
   - [Demographic](#demographic)
   - [Distance to Powerline](#distance-to-powerline)
-  - ~~[House Creep](#house-creep)~~
+  - [~~House Creep~~](#house-creep)
   - [Rent Price](#rent-price)
 - [Appendix](#appendix)
   - [Good APIs to investigate for phase two](#good-apis-to-investigate-for-phase-two)
-  - [APIs that have been tested/considered but dropped](#user-content-apis-that-have-been-testedconsidered-but-dropped)
+  - [APIs that have been tested/considered but dropped](#apis-that-have-been-testedconsidered-but-dropped)
 - [References](#references)
 
 
@@ -22,7 +22,7 @@
 | Data Type          | API           | Status                                                                            | Pricing           | Note                                                      |
 |--------------------|---------------|-----------------------------------------------------------------------------------|-------------------|-----------------------------------------------------------|
 | Crime              | SpotCrime     | Pending code implementation to test                                               | Free              | Can only be tested via code. Plan B is using Crimeometer. |
-| Noise              | Howloud       | Pending trial key                                                                 | Free 2,500/month  |                                                           |
+| Noise              | Howloud       | Successfully tested                                                                 | Free 2,500/month  |                                                           |
 | Demographic        | Geocodio      | Tested successfully                                                               | Free 2,500/month  |                                                           |
 | Powerline Distance | Earthdefine   | Tested successfully via web portal. Waiting for trail API key to test on Postman. | Pending info      |                                                           |
 | Rent Price         | Rent Estimate | Tested successfully                                                               | 50/month for free |                                                           |
@@ -85,7 +85,7 @@
 2. [SpotCrime API](https://github.com/yocontra/spotcrime) **TODO: try this out first before using crimeometer since it's cheaper**
 
 ### Noise
-Given the latitude and longitude of a location, return the sound score. [(Ref)](https://howloud.com/developers/) **TODO: waiting for trial key to test the API**
+Given the latitude and longitude of a location, return the sound score. [(Ref)](https://howloud.com/developers/) 
 
 Example Request
 ```bash
